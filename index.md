@@ -72,7 +72,9 @@ The players can request for a buff using this simple command:
 
 That way the bot will assume that their server nickname (display name) is their account name. Or they can request it for someone else (or input their account name manually):
 
-```-need [buffname] [Account name]```
+```markdown
+-need [buffname] [Account name]
+```
 
 In this case the bot will mention the person who made the request whenever needed but will ask the Protocol officier to give the buff to the alternative name they provide.
 
@@ -102,7 +104,8 @@ Players can remove their requests whenever they want using this function.
 A protocol officer can use this function to mention the player on top of the queue that they assigned the buff to them in game.
 
 ```markdown
--use [buffname]```
+-use [buffname]
+```
 
 Note: Mentioning the buff is not optional.
 
