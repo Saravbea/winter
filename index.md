@@ -30,8 +30,7 @@ Reminder that you don't need to give Winter the administrator permissions :) Bot
 
 Before using the PO functions, a server admin who is a veteran patreon (5$ or higher) must use the following command in the channel they want to setup as po requests channel.
 
-```markdown
--setuppo```
+```-setuppo```
 
 This function is the only po function that is limited only to patreons, meaning after setting up a channel as PO channel, everyone will be able to use the rest of the functions for free unlimitedly.
 
@@ -43,8 +42,7 @@ After activating the channel as a PO channel, bot will send a confirmation messa
 
 The players who have a PO role on server can use this following function to announce they are active to give away the buffs.
 
-```markdown
--active```
+```-active```
 
 And when they are going offline they can use the following function to announce they are gone:
 
@@ -63,13 +61,11 @@ Note: Server Admins and people with a server role called "Chief PO" are also all
 
 The players can request for a buff using this simple command:
 
-```markdown
--need [buffname]```
+```-need [buffname]```
 
 That way the bot will assume that their server nickname (display name) is their account name. Or they can request it for someone else (or input their account name manually):
 
-```markdown
--need [buffname] [Account name]```
+```-need [buffname] [Account name]```
 
 In this case the bot will mention the person who made the request whenever needed but will ask the Protocol officier to give the buff to the alternative name they provide.
 
@@ -89,7 +85,8 @@ Note: In image above the active po is also me, so the bot mentions me to ask me 
 Players can remove their requests whenever they want using this function.
 
 ```markdown
--done [buffname (optional)]```
+-done [buffname (optional)]
+```
 
 ![img](https://cdn.discordapp.com/attachments/633666978783166474/666342361873383434/unknown.png)
 
