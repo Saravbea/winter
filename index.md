@@ -30,7 +30,9 @@ Reminder that you don't need to give Winter the administrator permissions :) Bot
 
 Before using the PO functions, a server admin who is a veteran patreon (5$ or higher) must use the following command in the channel they want to setup as po requests channel.
 
-```-setuppo```
+```markdown
+-setuppo
+```
 
 This function is the only po function that is limited only to patreons, meaning after setting up a channel as PO channel, everyone will be able to use the rest of the functions for free unlimitedly.
 
@@ -42,12 +44,15 @@ After activating the channel as a PO channel, bot will send a confirmation messa
 
 The players who have a PO role on server can use this following function to announce they are active to give away the buffs.
 
-```-active```
+```markdown
+-active
+```
 
 And when they are going offline they can use the following function to announce they are gone:
 
 ```markdown
--deactive```
+-deactive
+```
 
 Winter will automatically mention the "Active PO" whenever its anyones turn to recieve the buff.
 
@@ -61,7 +66,9 @@ Note: Server Admins and people with a server role called "Chief PO" are also all
 
 The players can request for a buff using this simple command:
 
-```-need [buffname]```
+```markdown
+-need [buffname]
+```
 
 That way the bot will assume that their server nickname (display name) is their account name. Or they can request it for someone else (or input their account name manually):
 
@@ -104,7 +111,8 @@ Note: Mentioning the buff is not optional.
 A protocol officer can use this function to skip the person who is in top of the queue right now:
 
 ```markdown
--next [buffname]```
+-next [buffname]
+```
 
 Note: Mentioning the buff is not optional.
 
@@ -113,7 +121,8 @@ Note: Mentioning the buff is not optional.
 Using this function you can see a priview of the current queue!
 
 ```markdown
--queue```
+-queue
+```
 
 ![img](https://cdn.discordapp.com/attachments/626365897941975052/666345061143019541/unknown.png)
 
@@ -122,7 +131,8 @@ Using this function you can see a priview of the current queue!
 Using this function a PO can clear a specific buff queue or all buffs queues at the same time
 
 ```markdown
--clearqueue [buffname (optional)]```
+-clearqueue [buffname (optional)]
+```
 
 ### Offline Queueing Settings (for PO)
 
@@ -133,7 +143,8 @@ If offline queueing is active, the bot will mention a warning reminding people t
 All POs (with a server role called PO) are allowed to enable/disable this option using the following command:
 
 ```markdown
--offlinepo [buffname (optional)]```
+-offlinepo [buffname (optional)]
+```
 
 ### Automated Queueing Settings (for PO)
 
@@ -142,14 +153,16 @@ Automated queueing means, when activated, the queues will jump forward (to next 
 You can use set time function to setup the time between each jump:
 
 ```markdown
--settime [Minutes] [(Optional) Buff Name]```
+-settime [Minutes] [(Optional) Buff Name]
+```
 
 If Buff name is not mentioned it will set the time similarly for all buff queues in same manner. Default time is 2 minutes. "Minutes" must be an integer 0<x<61.
 
 POs can activate or deactivate the automated queuing with -auto function anytime:
 
 ```markdown
--auto [(optional) auto type] [(optional) buffname]```
+-auto [(optional) auto type] [(optional) buffname]
+```
 
 Types are:
 0: Automated queuing is disabled. POs must manually use -next or players must announce -done before Winter announces next person.
@@ -173,7 +186,8 @@ Simply calling "-auto" will activate automated queuing mode 1 (enabled and attac
 Information about troops.
 
 ```markdown
--troop [Troop Type] [Troop Tier] (-c [count] (optional))```
+-troop [Troop Type] [Troop Tier] (-c [count] (optional))
+```
 
 -c is for troop count.
 
@@ -184,7 +198,8 @@ Information about troops.
 Information about buildings.
 
 ```markdown
--building [Building Name]```
+-building [Building Name]
+```
 
 ![img](https://cdn.discordapp.com/attachments/633666978783166474/666336985438224404/unknown.png)
 
