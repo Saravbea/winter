@@ -1,37 +1,47 @@
-## Welcome to GitHub Pages
+# About Winter!
 
-You can use the [editor on GitHub](https://github.com/Saravbea/winter/edit/master/index.md) to maintain and preview the content for your website in Markdown files.
+Winter Bot is a legal bot made for the game "GOT: Winter is coming" that can help players with a variety of functions on discord.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+Winter Bot is made to help players with Protocol officers queuing, offline calculations , game server management, Bubble reminder, Rally calculators, Buff calculators, Pack calculators and etc! Its also going to have a bunch of very cool online games for discord servers!
 
-### Markdown
+Most of the functions are free! To be able to make up for the hardware resources and host cost of this bot, and for future development, some are only available for Patreons. Winter needs your help! Join me on this journey and help winter to become the best!
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+## Support and Contact
+
+Winter has expenses. I need money to be able to work on it properly! become my patreon and support Winter from today!
+
+**[Become My Patreon](https://www.patreon.com/winterbot)**
+
+You can also find Travtools discord channel [here](https://discord.gg/gVA9adu).
+
+## Installation
+
+To install Winter open the following link if you have the permission to do so (Server Management or Admin): [Install Link](https://discordapp.com/api/oauth2/authorize?client_id=626364547539664909&permissions=268435456&scope=bot)
+
+Just choose your server and confirm the captcha and it's done :)
+
+Reminder that you don't need to give Winter the administrator permissions :) Bot needs "Manage roles" permission if you want the Po functions to work properly though!
+
+**[Become My Patreon](https://www.patreon.com/winterbot)**
+
+## Information/Calulation Functions
+
+### Troop
+
+Information about troops.
 
 ```markdown
-Syntax highlighted code block
+-troop [Troop Type] [Troop Tier] (-c [count] (optional))```
 
-# Header 1
-## Header 2
-### Header 3
+-c is for troop count.
 
-- Bulleted
-- List
+![img](https://cdn.discordapp.com/attachments/633666978783166474/666336022816096296/unknown.png)
 
-1. Numbered
-2. List
+### Building
 
-**Bold** and _Italic_ and `Code` text
+Information about buildings.
 
-[Link](url) and ![Image](src)
-```
+```markdown
+-building [Building Name]```
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/Saravbea/winter/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+**[Become My Patreon](https://www.patreon.com/winterbot)**
