@@ -81,8 +81,11 @@ In this case the bot will mention the person who made the request whenever neede
 Currently recognized buff aliases are (Not case sensetive):
 
 Grand Measter: "Grand Measter", GrandMeaster, Measter, Research, Tech, Technology, GM
+
 Chief Builder: "Chief Builder", ChiefBuilder, Builder, Build, Building, Construction, CB
+
 Master of Whisperers: "Master of Whisperers", MasterofWhisperers, Whisperers, Train, "Troop Train", TroopTrain, MOW, Whispers, Whisper
+
 Master of Ships: "Ship", "Master of Ship", "Master of Ships", "MasterOfShip", "MasterOfShips", "Speed", "March", "March Speed", "MarchSpeed", "Gather"
 
 ![img](https://cdn.discordapp.com/attachments/633666978783166474/666341816177786891/unknown.png)
