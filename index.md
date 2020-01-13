@@ -12,7 +12,7 @@ Winter has expenses. I need money to be able to work on it properly! become my p
 
 **[Become My Patreon](https://www.patreon.com/winterbot)**
 
-You can also find Travtools discord channel [here](https://discord.gg/gVA9adu).
+You can also find Winter discord channel [here](https://discord.gg/gVA9adu).
 
 ## Installation
 
