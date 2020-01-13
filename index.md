@@ -57,6 +57,8 @@ Note: To be able to use this function, define a server role called "PO" (caps ch
 
 Note: If you define a server role called "Active PO" (caps characters are not important); the bot will automatically give that server role to the active po and will remove it from them when they go offline. Change the color of that role and click on "Display this role seprately" so when the bot gives the current active po that server role, they show up on top with a different color! pay attention that Winter needs to have Manage Roles permission over that new server role (it needs to be higher in roles list on your roles page in server setting). Ultimately you can give Winter admin permission.
 
+Note: Server Admins and people with a server role called "Chief PO" are also allowed to -deactive people (In case they vanished or must be removed!)
+
 ### Need (for Players requesting for buff)
 
 The players can request for a buff using this simple command:
@@ -113,7 +115,59 @@ Note: Mentioning the buff is not optional.
 
 Using this function you can see a priview of the current queue!
 
+```markdown
+-queue```
+
 ![img](https://cdn.discordapp.com/attachments/626365897941975052/666345061143019541/unknown.png)
+
+### Clear Queue (for PO)
+
+Using this function a PO can clear a specific buff queue or all buffs queues at the same time
+
+```markdown
+-clearqueue [buffname (optional)]```
+
+### Offline Queueing Settings (for PO)
+
+If no PO is marked as active PO and offline queueing is disabled for the requested buff, the bot will return an error instead of submitting the request in that certain queue (when people use -need function).
+
+If offline queueing is active, the bot will mention a warning reminding people that there are no active PO, but will submit their request. Whenever a PO becomes an Active PO (using -active), the top of all queues will be reminded to them so they can assign buffs.
+
+All POs (with a server role called PO) are allowed to enable/disable this option using the following command:
+
+```markdown
+-offlinepo [buffname (optional)]```
+
+### Automated Queueing Settings (for PO)
+
+Automated queueing means, when activated, the queues will jump forward (to next person in list) after some time is passed. This function is specially usable when a Tyrion event is up or queue is busy.
+
+You can use set time function to setup the time between each jump:
+
+```markdown
+-settime [Minutes] [(Optional) Buff Name]```
+
+If Buff name is not mentioned it will set the time similarly for all buff queues in same manner. Default time is 2 minutes. "Minutes" must be an integer 0<x<61.
+
+POs can activate or deactivate the automated queuing with -auto function anytime:
+
+```markdown
+-auto [(optional) auto type] [(optional) buffname]```
+
+Types are:
+0: Automated queuing is disabled. POs must manually use -next or players must announce -done before Winter announces next person.
+1: Automated queuing is enabled and is attached to "-use" function. Time for each person starts only after PO asks them to use the buff with use function.
+2: Automated queuing is enabled but is not attached to "-use" function. Time starts whenever PO is asked by Winter, to give someone the buff.
+
+Notes:
+- The default type is 0 (disabled). If the type is not specified the auto function changes between 0 (disable) and 1 (enable and attached to use function).
+- You have to define the type if you want to define the auto function for a certain buff queue. for example "-auto gm" is wrong you must use "-auto 1 gm"
+- If no specific buff queue is mentioned, all queues will share the automated queue setting.
+
+Simply calling "-auto" will activate automated queuing mode 1 (enabled and attached to use function) for all queues. If an automated queuing is already active, using "-auto" will disable all.
+
+
+**[Become My Patreon](https://www.patreon.com/winterbot)**
 
 ## Information/Calulation Functions
 
