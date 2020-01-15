@@ -24,6 +24,14 @@ Reminder that you don't need to give Winter the administrator permissions :) Bot
 
 **[Become My Patreon](https://www.patreon.com/winterbot)**
 
+## Help Function
+
+```markdown
+-help [Function name (Optional)
+```
+
+Helps you with your question about other winter functions :)
+
 ## Protocol Officing Functions
 
 ### Setup a PO channel
@@ -141,6 +149,16 @@ Using this function a PO can clear a specific buff queue or all buffs queues at 
 ```
 
 ### Offline Queueing Settings (for PO)
+
+ If its enabled, players can submit their buff request in multiple queues at the same time (they still cant submit in each queue more than once).
+
+All POs (with a server role called PO) are allowed to enable/disable this option using the following command:
+
+```markdown
+-multiqueue
+```
+
+### Multi-Queueing Settings (for PO)
 
 If no PO is marked as active PO and offline queueing is disabled for the requested buff, the bot will return an error instead of submitting the request in that certain queue (when people use -need function).
 
