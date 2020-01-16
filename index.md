@@ -137,6 +137,7 @@ Using this function you can see a priview of the current queue!
 
 ```markdown
 -queue
+-q
 ```
 
 ![img](https://cdn.discordapp.com/attachments/626365897941975052/666345061143019541/unknown.png)
