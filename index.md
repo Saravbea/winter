@@ -88,13 +88,14 @@ In this case the bot will mention the person who made the request whenever neede
 
 Currently recognized buff aliases are (Not case sensetive):
 
-Grand Measter: "Grand Measter", GrandMeaster, Measter, Research, Tech, Technology, GM
+Grand Maester = Maester, Research, Tech, Technology, "Grand Maester", GrandMaester, GM, R, Res
 
-Chief Builder: "Chief Builder", ChiefBuilder, Builder, Build, Building, Construction, CB
+Chief Builder = Building, Build, "Chief Builder", ChiefBuilder, Builder, Construction, CB, B, Cons, Const
 
-Master of Whisperers: "Master of Whisperers", MasterofWhisperers, Whisperers, Train, "Troop Train", TroopTrain, MOW, Whispers, Whisper
+Master of Whisperers= Train, "Troop Train", TroopTrain, "Master of Whisperers", Whisperers, MOW, MasterOfWhisperers, Whisper, Whispers, T, Troop, Whis, TR
 
-Master of Ships: "Ship", "Master of Ship", "Master of Ships", "MasterOfShip", "MasterOfShips", "Speed", "March", "March Speed", "MarchSpeed", "Gather"
+Master of Ships= Ship, "Master of Ship", "Master of Ships", MasterOfShip, MasterOfShips, Speed, March, "March Speed", MarchSpeed, Gather, S, Gathering, MOS
+
 
 ![img](https://cdn.discordapp.com/attachments/633666978783166474/666341816177786891/unknown.png)
 
@@ -147,6 +148,19 @@ Using this function a PO can clear a specific buff queue or all buffs queues at 
 ```markdown
 -clearqueue [buffname (optional)]
 ```
+
+### Lock/Unlock Queue (for PO)
+
+When a buff queue is locked, it wont show up in queue and no one can submit a request for that buff with -need function. Also -done -next and -use wont work for that buff.
+
+All POs (with a server role called PO) are allowed to lock/unlock buffs with following commands:
+
+```markdown
+-lock [Buff Name (Optional)]
+-unlock [Buff Name (Optional)]
+```
+
+If no buff is mentioned all queues will get locked/unlocked together.
 
 ### Offline Queueing Settings (for PO)
 
