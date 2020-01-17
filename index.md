@@ -163,7 +163,7 @@ All POs (with a server role called PO) are allowed to lock/unlock buffs with fol
 
 If no buff is mentioned all queues will get locked/unlocked together.
 
-### Offline Queueing Settings (for PO)
+### Multi-Queueing Settings (for PO)
 
  If its enabled, players can submit their buff request in multiple queues at the same time (they still cant submit in each queue more than once).
 
@@ -173,7 +173,7 @@ All POs (with a server role called PO) are allowed to enable/disable this option
 -multiqueue
 ```
 
-### Multi-Queueing Settings (for PO)
+### Offline Queueing Settings (for PO)
 
 If no PO is marked as active PO and offline queueing is disabled for the requested buff, the bot will return an error instead of submitting the request in that certain queue (when people use -need function).
 
