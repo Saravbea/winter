@@ -253,10 +253,14 @@ This function is only available to patrons. (1$ and higher)
 Information about troops.
 
 ```markdown
--troop [Troop Type] [Troop Tier] (-c [count] (optional))
+-troop [Troop Type] [Troop Tier] [-c [Count] (Optional)] [-s [Train Speed Buff] (Optional)] [-r [Cost Reduction Buff] (Optional)]
 ```
 
 -c is for troop count.
+-s is for troop train speed buff. You can see yours in your lord details page.
+-r is for Cost reduction buff. You can see yours in your lord details page.
+
+Values for -s and -r must be input as they are percents. (forexample for 300% troop train buff you should write "-s 300")
 
 ![img](https://cdn.discordapp.com/attachments/633666978783166474/666336022816096296/unknown.png)
 
