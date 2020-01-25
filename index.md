@@ -10,7 +10,7 @@ Most of the functions are free! To be able to make up for the hardware resources
 
 Winter has expenses. I need money to be able to work on it properly! become my patreon and support Winter from today!
 
-**[Become My Patreon](https://www.patreon.com/winterbot)**
+**[Become My Patron](https://www.patreon.com/winterbot)**
 
 You can also find Winter discord channel [here](https://discord.gg/gVA9adu).
 
@@ -22,7 +22,7 @@ Just choose your server and confirm the captcha and it's done :)
 
 Reminder that you don't need to give Winter the administrator permissions :) Bot needs "Manage roles" permission if you want the Po functions to work properly though!
 
-**[Become My Patreon](https://www.patreon.com/winterbot)**
+**[Become My Patron](https://www.patreon.com/winterbot)**
 
 ## Help Function
 
@@ -46,7 +46,7 @@ This function is the only po function that is limited only to patreons, meaning 
 
 After activating the channel as a PO channel, bot will send a confirmation message there and announces that it's party time!
 
-**[Become My Patreon](https://www.patreon.com/winterbot)**
+**[Become My Patron](https://www.patreon.com/winterbot)**
 
 ### Active/Deactive (for POs)
 
@@ -216,7 +216,35 @@ Notes:
 Simply calling "-auto" will activate automated queuing mode 1 (enabled and attached to use function) for all queues. If an automated queuing is already active, using "-auto" will disable all.
 
 
-**[Become My Patreon](https://www.patreon.com/winterbot)**
+**[Become My Patron](https://www.patreon.com/winterbot)**
+
+## Bubble Reminder
+
+```markdown
+-bubble in [Time] [-t [Threshold] (Optional)]
+```
+
+Will remind you to bubble after "time - threshold".
+
+Threshold determines how many minutes earlier than your specified Time, the bot should notify you. Default Threshold is 5 minutes. Threshold must be written in minutes.
+
+You can input time as:
+) hour
+) hour:minute
+) day:hour:minute
+
+Pay attention that this function doesnt support seconds. "-bubble in 2" will assume you want bubble reminder in 2 hours. "-bubble in 2:5" will assume you want the notification in 2 hours and 5 minutes and "-bubble in 1:2:5" means you want the notifictaion in 1 day, 2 hours and 5 minutes.
+
+```markdown
+-bubble off
+```
+
+Removes your previous reminder.
+
+This function is only available to patrons. (1$ and higher)
+
+**[Become My Patron](https://www.patreon.com/winterbot)**
+
 
 ## Information/Calulation Functions
 
@@ -242,4 +270,4 @@ Information about buildings.
 
 ![img](https://cdn.discordapp.com/attachments/633666978783166474/666336985438224404/unknown.png)
 
-**[Become My Patreon](https://www.patreon.com/winterbot)**
+**[Become My Patron](https://www.patreon.com/winterbot)**
