@@ -220,6 +220,10 @@ Simply calling "-auto" will activate automated queuing mode 1 (enabled and attac
 
 ## Bubble Reminder
 
+Note: Non patrons can only have one active reminder.
+Light patrons can have up to 3 active reminders.
+Veteran Patrons and higher can have unlimited amount of reminders.
+
 ```markdown
 -bubble in [Time] [-t [Threshold] (Optional)]
 ```
@@ -236,12 +240,41 @@ You can input time as:
 Pay attention that this function doesnt support seconds. "-bubble in 2" will assume you want bubble reminder in 2 hours. "-bubble in 2:5" will assume you want the notification in 2 hours and 5 minutes and "-bubble in 1:2:5" means you want the notifictaion in 1 day, 2 hours and 5 minutes.
 
 ```markdown
+-bubble at [Time] [-t [Threshold] (Optional)]
+```
+
+Will remind you for bubble at the time you specified. Threshold is in minutes and shows how much earlier than the time you specified you want to be mentioned. Default Threshold is 5 minutes.
+
+Time can be input as "Hours" or "Hours:Minutes" or "Day:Hours:Minutes". Time has no option for seconds!
+
+The number of days will be added to current date, but the bot will announce the notify in specified hour/minutes.
+
+For example lets say its 1/25 12:00:
+
+-bubble at 2:5:12
+
+Will mention you at 1/27 5:07:-- (Seconds not important) the reason its not at min 12 is because the default threshold is 5 minutes.
+
+
+```markdown
 -bubble off
 ```
 
-Removes your previous reminder.
+Removes your previous reminders.
 
-This function is only available to patrons. (1$ and higher)
+This following commands are only available to patrons: (1$ and higher)
+
+```markdown
+-bubble daily [Time] [-t [Threshold] (Optional)]
+```
+
+Exactly like "at" function for first notification. Then the bot will automatically notify you each 24 hours.
+
+```markdown
+-bubble each [Hours] [Time] [-t [Threshold] (Optional)]
+```
+
+Exactly like "at" function for first notification. Then the bot will automatically notify you each [Hours] hours.
 
 **[Become My Patron](https://www.patreon.com/winterbot)**
 
