@@ -75,16 +75,22 @@ Note: Server Admins and people with a server role called "Chief PO" are also all
 The players can request for a buff using this simple command:
 
 ```markdown
--need [buffname]
+-need [buffname] (+ [Secondary buff name] Optional)
 ```
 
 That way the bot will assume that their server nickname (display name) is their account name. Or they can request it for someone else (or input their account name manually):
 
 ```markdown
--need [buffname] [Account name]
+-need [buffname] [Account name] (+ [Secondary buff name] Optional)
 ```
 
 In this case the bot will mention the person who made the request whenever needed but will ask the Protocol officier to give the buff to the alternative name they provide.
+
+The secondary buff name will not be queued and will only be shown to PO so they can assign it when your turn comes. This is useful for assigning CCS buffs.
+
+For example:
+"-need r Winter Angel + Research officer"
+Will queue Winter Angel for both Grand Maester and Research Officer. Winter Angel name will only exist in a single queue but the PO will be asked for both buffs.
 
 Currently recognized buff aliases are (Not case sensetive):
 
@@ -98,6 +104,8 @@ Master of Ships= Ship, "Master of Ship", "Master of Ships", MasterOfShip, Master
 
 Lord Commander= "Lord Commander", LordCommander, Lord, Commander, LC, L
 
+
+You don't have to use any alias for secondary buff requests (CCS buffs) and the pure text will show up.
 
 ![img](https://cdn.discordapp.com/attachments/633666978783166474/666341816177786891/unknown.png)
 
@@ -233,6 +241,21 @@ Notes:
 - If no specific buff queue is mentioned, all queues will share the automated queue setting.
 
 Simply calling "-auto" will activate automated queuing mode 1 (enabled and attached to use function) for all queues. If an automated queuing is already active, using "-auto" will disable all.
+
+### AFK (for PO)
+
+Will announce to any future requestors that PO is away from keyboard. Using any commands by them will break this state.
+
+
+```markdown
+-afk
+```
+
+They can also use the following command to announce they are back:
+
+```markdown
+-back
+```
 
 
 **[Become My Patron](https://www.patreon.com/winterbot)**
