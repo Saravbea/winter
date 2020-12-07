@@ -96,6 +96,8 @@ Master of Whisperers= Train, "Troop Train", TroopTrain, "Master of Whisperers", 
 
 Master of Ships= Ship, "Master of Ship", "Master of Ships", MasterOfShip, MasterOfShips, Speed, March, "March Speed", MarchSpeed, Gather, S, Gathering, MOS
 
+Lord Commander= "Lord Commander", LordCommander, Lord, Commander, LC, L
+
 
 ![img](https://cdn.discordapp.com/attachments/633666978783166474/666341816177786891/unknown.png)
 
@@ -162,6 +164,23 @@ All POs (with a server role called PO) are allowed to lock/unlock buffs with fol
 ```
 
 If no buff is mentioned all queues will get locked/unlocked together.
+
+Lord Commander is the only queue that's locked by default.
+
+
+### PO summary
+
+This command can be used to check the PO activities on the channel for a set period of time.
+
+```markdown
+-posummary [since days] (till [till days] Optional) (-sort r Optional)
+-poanalyze [since days] (till [till days] Optional) (-sort r Optional)
+```
+
+Output is a summary of all POs online time and total requests since "Today minus [since days]"  till "Today minus [till days]" forexample "-posummary 4 till 1" will give you a list since 4 days ago till 1 day ago. If you don't include [till days] it will return the list till today.
+
+By default the output is sorted based on total active time. add "-sort r" to function so it sorts the list based on total request count.
+
 
 ### Multi-Queueing Settings (for PO)
 
@@ -275,6 +294,90 @@ Exactly like "at" function for first notification. Then the bot will automatical
 ```
 
 Exactly like "at" function for first notification. Then the bot will automatically notify you each [Hours] hours.
+
+
+### Setup Bubble Reminder channel
+
+Patrons of Elite (10$ or higher) can setup one bubble reminder channel to allow all players to fully use bubble reminder functions that are mentioned above to reduce the restrictions..
+
+```markdown
+-setupbubble
+```
+
+Daily and Each functions will be available in a bubble reminder channel. Players will be able to have up to 5 reminders in that channel instead of normal restrictions.
+
+
+**[Become My Patron](https://www.patreon.com/winterbot)**
+
+## Protectors and Alts database
+
+### Protector
+
+You can let winter know your protector in any server.
+
+```markdown
+-protector is [Mention or name]
+```
+
+Anyone on that discord server will be able to ask winter who is your protector. Anyone who uses this function on any other discord server will see a privacy error.
+
+```markdown
+-protector of [Mention or name]
+```
+
+You can also save protector information for your alts:
+
+```markdown
+-protector of [name] is [Mention or name]
+```
+
+You can delete save information about your protector with following command:
+
+```markdown
+-protector delete
+-protector remove
+```
+
+### Setup Alts
+
+Each patron of 10$ (Elite) or higher can setup one channel for saving alts information.
+
+```markdown
+-setupalt/setupalts
+```
+
+All players will be able to use this channel to save their alts and everyone will be able to use that channel to search in the saved information (to figure out whose alt is this or that).
+
+Each patron can only have one channel. You can use -setupalt on a new channel and it will expire the credential for your old channels. The data on previous servers wont be deleted however.
+
+### Alts
+
+After an alts channel is setup players can save their alts information (limited to 20 alts per player atm)
+
+```markdown
+-alts/-alt add [Name] (Optional -t [Tag])
+```
+
+for example "-alt add Winter Angel -t Fighter" will add Winter Angel as my alt with a tag "Fighter". Tags are optional and can be used for categorizing alts or leaving a message/note for each.
+
+Players can search for others alts:
+
+```markdown
+-alts/-alt who [Name]
+```
+
+or can list all their alts (or others alts):
+
+```markdown
+-alts/-alt list ([Mention] Optional)
+```
+
+Also with following command, they can remove a certain alt from their own list:
+
+```markdown
+-alts/-alt remove [Name]
+```
+
 
 **[Become My Patron](https://www.patreon.com/winterbot)**
 
