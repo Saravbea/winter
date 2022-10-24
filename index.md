@@ -252,64 +252,65 @@ Light patrons can have up to 3 active reminders.
 Veteran Patrons and higher can have unlimited amount of reminders.
 
 ```markdown
--bubble in [Time] [-t [Threshold] (Optional)]
+-bubble (type) (hour) (minute (Optional)) (day (Optional)) (loop_each (Optional)) (threshold (Optional)) (comment (Optional)
 ```
-
-Will remind you to bubble after "time - threshold".
-
-Threshold determines how many minutes earlier than your specified Time, the bot should notify you. Default Threshold is 5 minutes. Threshold must be written in minutes.
 
 You can input time as:
 ) hour
 ) hour:minute
 ) day:hour:minute
+with optional hour and minute paramters
 
-Pay attention that this function doesnt support seconds. "-bubble in 2" will assume you want bubble reminder in 2 hours. "-bubble in 2:5" will assume you want the notification in 2 hours and 5 minutes and "-bubble in 1:2:5" means you want the notifictaion in 1 day, 2 hours and 5 minutes.
+Pay attention that this function doesnt support seconds.
 
-```markdown
--bubble at [Time] [-t [Threshold] (Optional)]
-```
+type 1: "in"
+Will remind you to bubble after "time - threshold" from now (bubble in 10 hours for example translates to "/bubble type:in hour:10"
 
+Threshold determines how many minutes earlier than your specified Time, the bot should notify you. Default Threshold is 5 minutes. Threshold must be written in minutes.
+
+type 2: "at"
 Will remind you for bubble at the time you specified. Threshold is in minutes and shows how much earlier than the time you specified you want to be mentioned. Default Threshold is 5 minutes.
-
-Time can be input as "Hours" or "Hours:Minutes" or "Day:Hours:Minutes". Time has no option for seconds!
 
 The number of days will be added to current date, but the bot will announce the notify in specified hour/minutes.
 
 For example lets say its 1/25 12:00:
 
--bubble at 2:5:12
+/bubble type:at hour:5 day:2 minute:12
 
 Will mention you at 1/27 5:07:-- (Seconds not important) the reason its not at min 12 is because the default threshold is 5 minutes.
 
+This following types are only available to patrons: (1$ and higher)
 
-```markdown
--bubble off
-```
-
-Removes your previous reminders.
-
-This following commands are only available to patrons: (1$ and higher)
-
-```markdown
--bubble daily [Time] [-t [Threshold] (Optional)]
-```
+type 3: daily
 
 Exactly like "at" function for first notification. Then the bot will automatically notify you each 24 hours.
 
+type 4: each
+
+Exactly like "at" function for first notification. Then the bot will automatically notify you each (hour) hours. Its mandatory for this option to add (loop_each) paramter in hours to determine the cycle of the loop.
+
+There are other bubble reminder related commands:
+
 ```markdown
--bubble each [Hours] [Time] [-t [Threshold] (Optional)]
+/bubble-list
 ```
 
-Exactly like "at" function for first notification. Then the bot will automatically notify you each [Hours] hours.
+Shows a list of all current reminders set for you.
+
+```markdown
+/bubble-remove (id (Optional))
+```
+
+Removed all bubble reminders set for you. If an ID is specificed only will remove that reminder. You can see reminder IDs using the list command above.
+
 
 
 ### Setup Bubble Reminder channel
 
-Patrons of Elite (10$ or higher) can setup one bubble reminder channel to allow all players to fully use bubble reminder functions that are mentioned above to reduce the restrictions..
+Patrons of Elite (10$ or higher) can setup one and only one bubble reminder channel to allow all players to fully use bubble reminder functions that are mentioned above to reduce the restrictions..
 
 ```markdown
--setupbubble
+/setup-bubble
 ```
 
 Daily and Each functions will be available in a bubble reminder channel. Players will be able to have up to 5 reminders in that channel instead of normal restrictions.
@@ -324,34 +325,31 @@ Daily and Each functions will be available in a bubble reminder channel. Players
 You can let winter know your protector in any server.
 
 ```markdown
--protector is [Mention or name]
+/add-protector (name) (protecting_of (Optional)
 ```
 
-Anyone on that discord server will be able to ask winter who is your protector. Anyone who uses this function on any other discord server will see a privacy error.
+Add a protector for yourself. name can be a mention, multiple mentions or simple text. You can only have protector data on one server. If you use this function again your previous data gets wiped. 
+
+Admins of a server can use (protecting_of) paramter to write protector of another player in same server as long as they don't have  protector detail in another server saved.
 
 ```markdown
--protector of [Mention or name]
+/search-protector (mention)
 ```
 
-You can also save protector information for your alts:
+Mention the player your searching for their protector information. This information will show if the person saved info on same discord server and will ping whoever was set to be mentioned.
 
 ```markdown
--protector of [name] is [Mention or name]
+/remove-protector
 ```
 
-You can delete save information about your protector with following command:
-
-```markdown
--protector delete
--protector remove
-```
+Removes your saved protector information
 
 ### Setup Alts
 
 Each patron of 10$ (Elite) or higher can setup one channel for saving alts information.
 
 ```markdown
--setupalt/setupalts
+/setup-alts
 ```
 
 All players will be able to use this channel to save their alts and everyone will be able to use that channel to search in the saved information (to figure out whose alt is this or that).
@@ -363,29 +361,28 @@ Each patron can only have one channel. You can use -setupalt on a new channel an
 After an alts channel is setup players can save their alts information (limited to 20 alts per player atm)
 
 ```markdown
--alts/-alt add [Name] (Optional -t [Tag])
+/add-alt (name) (type (Optional)
 ```
 
-for example "-alt add Winter Angel -t Fighter" will add Winter Angel as my alt with a tag "Fighter". Tags are optional and can be used for categorizing alts or leaving a message/note for each.
+for example "/add-alt name:"Winter Angel" type:"Fighter" will add Winter Angel as my alt with a tag "Fighter". Tags are optional and can be used for categorizing alts or leaving a message/note for each.
 
 Players can search for others alts:
 
 ```markdown
--alts/-alt who [Name]
+/search-alt (name)
 ```
 
-or can list all their alts (or others alts):
+or can list all their alts (or others alts if the optional field is filled):
 
 ```markdown
--alts/-alt list ([Mention] Optional)
+/list-alt (mention (Optional))
 ```
 
-Also with following command, they can remove a certain alt from their own list:
+Also with following command, they can remove a certain alt from their own list or all the alts:
 
 ```markdown
--alts/-alt remove [Name]
+/remove-alt (name (Optioanl)) (all (Optioanl)
 ```
-
 
 **[Become My Patron](https://www.patreon.com/winterbot)**
 
@@ -397,25 +394,21 @@ Also with following command, they can remove a certain alt from their own list:
 Information about troops.
 
 ```markdown
--troop [Troop Type] [Troop Tier] [-c [Count] (Optional)] [-s [Train Speed Buff] (Optional)] [-r [Cost Reduction Buff] (Optional)]
+/troop (type) (tier (Optional)) (count (Optional)) (speed (Optional)) (reductio (Optional))
 ```
 
--c is for troop count.
--s is for troop train speed buff. You can see yours in your lord details page.
--r is for Cost reduction buff. You can see yours in your lord details page.
+- (count) is for troop count.
+- (speed) is for troop train speed buff. You can see yours in your lord details page.
+- (reduction) is for Cost reduction buff. You can see yours in your lord details page.
 
-Values for -s and -r must be input as they are percents. (forexample for 300% troop train buff you should write "-s 300")
-
-![img](https://cdn.discordapp.com/attachments/633666978783166474/666336022816096296/unknown.png)
+Values for speed (train speed) and reduction (cost reduction) must be input as they are percents. (forexample for 300% troop train buff you should write "speed:300")
 
 ### Building
 
 Information about buildings.
 
 ```markdown
--building [Building Name]
+/building (name)
 ```
-
-![img](https://cdn.discordapp.com/attachments/633666978783166474/666336985438224404/unknown.png)
 
 **[Become My Patron](https://www.patreon.com/winterbot)**
