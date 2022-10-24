@@ -16,7 +16,7 @@ You can also find Winter discord channel [here](https://discord.gg/gVA9adu).
 
 ## Installation
 
-To install Winter open the following link if you have the permission to do so (Server Management or Admin): [Install Link](https://discordapp.com/api/oauth2/authorize?client_id=626364547539664909&permissions=268435456&scope=bot)
+To install Winter open the following link if you have the permission to do so (Server Management or Admin): [Install Link](https://discord.com/api/oauth2/authorize?client_id=626364547539664909&permissions=268435456&scope=applications.commands%20bot)
 
 Just choose your server and confirm the captcha and it's done :)
 
@@ -27,7 +27,7 @@ Reminder that you don't need to give Winter the administrator permissions :) Bot
 ## Help Function
 
 ```markdown
--help [Function name (Optional)
+/help (command (Optional))
 ```
 
 Helps you with your question about other winter functions :)
@@ -39,7 +39,7 @@ Helps you with your question about other winter functions :)
 Before using the PO functions, a server admin who is a veteran patreon (5$ or higher) must use the following command in the channel they want to setup as po requests channel.
 
 ```markdown
--setuppo
+/setuppo
 ```
 
 This function is the only po function that is limited only to patreons, meaning after setting up a channel as PO channel, everyone will be able to use the rest of the functions for free unlimitedly.
@@ -53,13 +53,13 @@ After activating the channel as a PO channel, bot will send a confirmation messa
 The players who have a PO role on server can use this following function to announce they are active to give away the buffs.
 
 ```markdown
--active
+/activate-po
 ```
 
 And when they are going offline they can use the following function to announce they are gone:
 
 ```markdown
--deactive
+/deactivate-po
 ```
 
 Winter will automatically mention the "Active PO" whenever its anyones turn to recieve the buff.
@@ -75,21 +75,15 @@ Note: Server Admins and people with a server role called "Chief PO" are also all
 The players can request for a buff using this simple command:
 
 ```markdown
--need [buffname] (+ [Secondary buff name] Optional)
+/need (buff) (for_account (Optional)) (ccs_buff (optional))
 ```
 
-That way the bot will assume that their server nickname (display name) is their account name. Or they can request it for someone else (or input their account name manually):
+That way the bot will assume that their server nickname (display name) is their account name. Or they can request it for someone else (or input their account name manually in (for_account) optional parameter. In this case the bot will mention the person who made the request whenever needed but will ask the Protocol officier to give the buff to the alternative name they provide.
 
-```markdown
--need [buffname] [Account name] (+ [Secondary buff name] Optional)
-```
-
-In this case the bot will mention the person who made the request whenever needed but will ask the Protocol officier to give the buff to the alternative name they provide.
-
-The secondary buff name will not be queued and will only be shown to PO so they can assign it when your turn comes. This is useful for assigning CCS buffs.
+Players can add extra requests from PO or ask for ccs buffs using the (ccs_buff) option. The secondary requests will not be queued and will only be shown to PO so they can assign it when your turn comes. This is useful for assigning CCS buffs specially.
 
 For example:
-"-need r Winter Angel + Research officer"
+"/need buff:r for_account:"Winter Angel" ccs_buff:"Research officer"
 Will queue Winter Angel for both Grand Maester and Research Officer. Winter Angel name will only exist in a single queue but the PO will be asked for both buffs.
 
 Currently recognized buff aliases are (Not case sensetive):
@@ -104,71 +98,63 @@ Master of Ships= Ship, "Master of Ship", "Master of Ships", MasterOfShip, Master
 
 Lord Commander= "Lord Commander", LordCommander, Lord, Commander, LC, L
 
-
 You don't have to use any alias for secondary buff requests (CCS buffs) and the pure text will show up.
-
-![img](https://cdn.discordapp.com/attachments/633666978783166474/666341816177786891/unknown.png)
-
-Note: In image above the active po is also me, so the bot mentions me to ask me to assign the buff.
 
 ### Done (for Players when they are done with the buff)
 
 Players can remove their requests whenever they want using this function.
 
 ```markdown
--done [buffname (optional)]
+/done (buff (optional))
 ```
 
-![img](https://cdn.discordapp.com/attachments/633666978783166474/666342361873383434/unknown.png)
+If a certain buff is mentioned, the request for that gets removed, otherwise all submitted requests get removed.
 
 ### Use (for PO after they assigned a buff)
 
 A protocol officer can use this function to mention the player on top of the queue that they assigned the buff to them in game.
 
 ```markdown
--use [buffname]
+/use (buff)
 ```
 
-Note: Mentioning the buff is not optional.
+Note: Mentioning the buff is not optional for this command.
 
 ### Next (for PO to skip someone in a queue)
 
 A protocol officer can use this function to skip the person who is in top of the queue right now:
 
 ```markdown
--next [buffname]
+/next (buff)
 ```
 
-Note: Mentioning the buff is not optional.
+Note: Mentioning the buff is not optional for this command.
 
 ### Queue (for everyone!)
 
 Using this function you can see a priview of the current queue!
 
 ```markdown
--queue
--q
+/queue
 ```
-
-![img](https://cdn.discordapp.com/attachments/626365897941975052/666345061143019541/unknown.png)
 
 ### Clear Queue (for PO)
 
 Using this function a PO can clear a specific buff queue or all buffs queues at the same time
 
 ```markdown
--clearqueue [buffname (optional)]
+/clear-queue (buff (Optional))
 ```
 
 ### Lock/Unlock Queue (for PO)
 
-When a buff queue is locked, it wont show up in queue and no one can submit a request for that buff with -need function. Also -done -next and -use wont work for that buff.
+When a buff queue is locked, it wont show up in queue and no one can submit a request for that buff with /need function. Also /done /next and /use wont work for that buff.
 
 All POs (with a server role called PO) are allowed to lock/unlock buffs with following commands:
 
 ```markdown
--lock [Buff Name (Optional)]
--unlock [Buff Name (Optional)]
+/lock (buff (Optional))
+/unlock (buff (Optional))
 ```
 
 If no buff is mentioned all queues will get locked/unlocked together.
@@ -181,8 +167,7 @@ Lord Commander is the only queue that's locked by default.
 This command can be used to check the PO activities on the channel for a set period of time.
 
 ```markdown
--posummary [since days] (till [till days] Optional) (-sort r Optional)
--poanalyze [since days] (till [till days] Optional) (-sort r Optional)
+/po-summary (since) (till (Optional)) (sort_by_request_count (Optional))
 ```
 
 Output is a summary of all POs online time and total requests since "Today minus [since days]"  till "Today minus [till days]" forexample "-posummary 4 till 1" will give you a list since 4 days ago till 1 day ago. If you don't include [till days] it will return the list till today.
