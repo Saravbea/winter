@@ -170,9 +170,9 @@ This command can be used to check the PO activities on the channel for a set per
 /po-summary (since) (till (Optional)) (sort_by_request_count (Optional))
 ```
 
-Output is a summary of all POs online time and total requests since "Today minus [since days]"  till "Today minus [till days]" forexample "-posummary 4 till 1" will give you a list since 4 days ago till 1 day ago. If you don't include [till days] it will return the list till today.
+Output is a summary of all POs online time and total requests since "Today minus (since)"  till "Today minus (till)" forexample "/po-summary since:4 till:1" will give you a list since 4 days ago till 1 day ago. If you don't include (till) it will return the list till today.
 
-By default the output is sorted based on total active time. add "-sort r" to function so it sorts the list based on total request count.
+By default the output is sorted based on total active time. add "sort_by_request_count:True" to function so it sorts the list based on total request count.
 
 
 ### Multi-Queueing Settings (for PO)
@@ -182,19 +182,19 @@ By default the output is sorted based on total active time. add "-sort r" to fun
 All POs (with a server role called PO) are allowed to enable/disable this option using the following command:
 
 ```markdown
--multiqueue
+/multi-queue
 ```
 
 ### Offline Queueing Settings (for PO)
 
-If no PO is marked as active PO and offline queueing is disabled for the requested buff, the bot will return an error instead of submitting the request in that certain queue (when people use -need function).
+If no PO is marked as active PO and offline queueing is disabled for the requested buff, the bot will return an error instead of submitting the request in that certain queue (when people use /need function).
 
-If offline queueing is active, the bot will mention a warning reminding people that there are no active PO, but will submit their request. Whenever a PO becomes an Active PO (using -active), the top of all queues will be reminded to them so they can assign buffs.
+If offline queueing is active, the bot will mention a warning reminding people that there are no active PO, but will submit their request. Whenever a PO becomes an Active PO (using /activate), the top of all queues will be reminded to them so they can assign buffs.
 
 All POs (with a server role called PO) are allowed to enable/disable this option using the following command:
 
 ```markdown
--offlinepo [buffname (optional)]
+/offline-queue (buff (optional))
 ```
 
 ### Automated Queueing Settings (for PO)
@@ -204,28 +204,28 @@ Automated queueing means, when activated, the queues will jump forward (to next 
 You can use set time function to setup the time between each jump:
 
 ```markdown
--settime [Minutes] [(Optional) Buff Name]
+/set-time (time) (buff (Optional))
 ```
 
-If Buff name is not mentioned it will set the time similarly for all buff queues in same manner. Default time is 2 minutes. "Minutes" must be an integer 0<x<61.
+Time is based on minutes. If Buff name is not mentioned it will set the time similarly for all buff queues in same manner. Default time is 2 minutes. (time) must be an integer 0<x<61.
 
-POs can activate or deactivate the automated queuing with -auto function anytime:
+POs can activate or deactivate the automated queuing with /auto function anytime:
 
 ```markdown
--auto [(optional) auto type] [(optional) buffname]
+/auto (buff (Optional)) (type (Optional)) 
 ```
 
 Types are:
-0: Automated queuing is disabled. POs must manually use -next or players must announce -done before Winter announces next person.
-1: Automated queuing is enabled and is attached to "-use" function. Time for each person starts only after PO asks them to use the buff with use function.
-2: Automated queuing is enabled but is not attached to "-use" function. Time starts whenever PO is asked by Winter, to give someone the buff.
+0: Automated queuing is disabled. POs must manually use -next or players must announce /done before Winter announces next person.
+1: Automated queuing is enabled and is attached to "/use" function. Time for each person starts only after PO asks them to use the buff with use function.
+2: Automated queuing is enabled but is not attached to "/use" function. Time starts whenever PO is asked by Winter, to give someone the buff.
 
 Notes:
 - The default type is 0 (disabled). If the type is not specified the auto function changes between 0 (disable) and 1 (enable and attached to use function).
-- You have to define the type if you want to define the auto function for a certain buff queue. for example "-auto gm" is wrong you must use "-auto 1 gm"
+- You have to define the type if you want to define the auto function for a certain buff queue. for example "/auto buff:gm" is wrong you must use "/auto type:1 buff:gm"
 - If no specific buff queue is mentioned, all queues will share the automated queue setting.
 
-Simply calling "-auto" will activate automated queuing mode 1 (enabled and attached to use function) for all queues. If an automated queuing is already active, using "-auto" will disable all.
+Simply calling "/auto" will activate automated queuing mode 1 (enabled and attached to use function) for all queues. If an automated queuing is already active, using "/auto" will disable all.
 
 ### AFK (for PO)
 
@@ -233,13 +233,13 @@ Will announce to any future requestors that PO is away from keyboard. Using any 
 
 
 ```markdown
--afk
+/afk
 ```
 
 They can also use the following command to announce they are back:
 
 ```markdown
--back
+/back
 ```
 
 
